@@ -1,0 +1,83 @@
+.heading{
+
+margin-left: 20px;
+
+}
+#heading-div{
+	height: 100px;
+	width: 1220px;
+	
+	background-color: white;
+}
+body{
+	
+}
+img{
+	height:103px;
+	width: 100px;
+	margin-top: -7%;
+	
+}
+h4{
+	margin-left: 570px;
+}
+#logout1{
+	height: 30px;
+	width: 70px;
+	margin-left: 1350;
+	border-radius: 2px;
+    background-color: white;
+	margin-top: -3.3%;
+	
+	
+	
+}
+#logout2{
+	height: 30px;
+	width: 90px;
+	margin-left: 10;
+	
+    color: white;
+	margin-top: -4%;
+	background-color: green;
+}
+#logout3{
+	height: 30px;
+	width: 220px;
+	margin-left: 500;
+
+        background-color: white;
+	margin-top: -4%;
+}
+h1{
+	font-size: 52px;
+	margin-top: -2.5px;
+	margin-left: 400px;
+	color: MidnightBlue;
+}
+table{
+	margin-top: 50px;
+	margin-left: -1%;
+	background-image: url(abc.png);
+	width: 1320;
+}
+th{
+	font-size: 32px;
+	padding-left: 70px;
+	border: 2px solid black;
+	color: black;
+}
+td{
+	font-size: 20px;
+	padding-left: 70px;
+	text-align: center;
+	padding-top: 20px;
+	border: 2px solid black;
+}
+table{
+	border: 2px solid black;
+}
+#googleMap{
+	margin-top: 10px;
+	padding-top: 500px;
+}

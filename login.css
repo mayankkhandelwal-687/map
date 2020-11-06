@@ -1,0 +1,153 @@
+
+
+
+
+
+body{
+	background-image: url("new.png");
+	background-size: cover;
+    overflow: hidden;
+	
+
+}
+#image-div{
+margin-top: 0px;
+height: 100px;
+width: 1400px;
+background-color: #FFFFFF;
+margin-left: 10px;
+}
+#lkm{
+	background-image: url("jo.png");
+	overflow: hidden;
+	background-size: cover;
+	 
+
+
+}
+
+h1{
+	margin-left: 450px;
+	font-size: 40px;
+	color: yellow;
+}
+.image-div{
+	margin-top: -1%;
+	margin-left: -1%;
+	height: 90px;
+	width:  1450px;
+	background-color: white;
+	border: 2px solid gray;
+	opacity: 0.7;
+	 
+	
+}
+img{
+	height: 80px;
+	width: 100px;
+	margin-top: 10px;
+	
+	
+}
+h3{
+	text-align: center;
+	font-size: 40px;
+	margin-top: -5%;
+	color:  #001f6c;
+}
+#h1tag{
+	text-align: center;
+	margin-top: 10px;
+	color: #d1ac00;
+	font-size: 20px;
+	margin-left: 20px;
+}
+.main-div{
+	height: 300px;
+	width: 700px;
+	margin-left: 350px;
+	margin-top: 200px;
+}
+.user-div
+{
+	height: 300px;
+	width: 700px;
+	
+	margin-left: 350px;
+	margin-top: 100px;
+	
+	
+}
+form{
+	text-align: center;
+	margin-left: 30px;
+	margin-top: 20px;
+	
+}
+#input1{
+	padding: 13px 40px 13px 40px;
+	margin-top: 10px;
+	border-radius: 10px;
+	border: 2px solid gray;
+	
+}
+#input2{
+	padding: 13px 40px 13px 40px;
+	margin-top: 10px;
+	border-radius: 10px;
+	border: 2px solid gray;
+}
+placeholder{
+	color: black;
+}
+#input3{
+	padding: 8px 30px 8px 30px;
+	margin-top: 10px;
+	margin-right: 2px;
+	border-radius: 10px;
+	border: 5px solid gray;
+}
+#input6{
+	padding: 13px 40px 13px 40px;
+	margin-top: 10px;
+	border-radius: 10px;
+	border: 2px solid gray;
+	
+}
+#input4{
+	padding: 13px 40px 13px 40px;
+	margin-top: 10px;
+	border-radius: 10px;
+	border: 2px solid gray;
+}
+
+#input8{
+	
+	padding: 13px 40px 13px 40px;
+	margin-top: 10px;
+	border-radius: 10px;
+	border: 2px solid gray;
+}
+
+#input5{
+	padding: 8px 30px 8px 30px;
+	margin-top: 10px;
+	margin-right: 2px;
+	border-radius: 10px;
+	border: 5px solid gray;
+}
+
+
+label{
+	height: 100px;
+	width: 120px;
+	margin-top: 30px;
+	border: 2px solid gray;
+	background-color: white;
+	
+
+}
+
+
+
+

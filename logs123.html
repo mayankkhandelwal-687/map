@@ -1,0 +1,119 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="logs123.css">
+</head>
+<body>
+<?php
+
+$conn = mysqli_connect('testing.siotel.in','root','Alyr!020','new_snms');
+
+if(!$conn){
+echo "database error";
+} else{
+
+//echo "connected";
+}
+
+?>
+<table id="example" >
+<thead>
+							<tr>
+								<th>S.no.</th>
+								<th>Gateway ID</th>
+								<th>Time</th>
+								<th>core_clock</th>
+								<th>io_voltage</th>
+								<th>core_voltage</th>
+								<th>cpu_freq</th>
+								<th>temperature</th>
+								<th>cpu_percent</th>
+								<th>physical_voltage</th>
+								<th>controller_voltage</th>
+								<th>up_time</th>
+								<th>ram_status</th>
+								<th>tx-pwr</th>
+								<th>pkt_fwd</th>
+								<th>All Ip lo</th>
+								<th>eth0</th>
+								<th>wlan0</th>
+								<th>public_IP</th>
+								<th>ppp0</th>
+								<th>tun0</th>
+								<th>Ip Stat lo</th>
+								<th>Ip Stat eth0</th>
+								<th>main</th>
+								<th>Ip Stat ppp0</th>
+								<th>Ip Stat wlan0</th>
+								<th>Gateway lo</th>
+								<th>Gateway eth0</th>
+								<th>Gateway wlan0</th>
+							</tr>
+						</thead>
+						
+						
+						<?php
+							
+							$gid= mysqli_escape_string($conn,$_GET['q']);						
+							if ($gid=='' && strlen($gid)!=16) {
+								die("Invalid Argument i.e. Gateway ID passed");
+							}
+							$qwery="select * from gateway_mgmt where gateway_id='$gid' order by id desc LIMIT 1000";
+							$data= mysqli_query($conn,$qwery);
+							
+							while ($fetch=mysqli_fetch_assoc($data)) {
+							$time_stamp=json_decode($fetch['time_stamp']);
+							$all_ip=json_decode($fetch['all_ip']);
+							$all_ip_stat=json_decode($fetch['all_ip_stat']);
+							$gateway_id=$fetch['gateway_id'];
+							$gateway_ip=json_decode($fetch['gateway_ip']);
+							$health=json_decode( preg_replace('/[\x00-\x1F\x80-\xFF]/', '', $fetch['health']), true );
+									$concentrator=json_decode( preg_replace('/[\x00-\x1F\x80-\xFF]/', '', $fetch['concentrator']), true );
+							$requested_time=$fetch['requested_time'];
+						
+						?>
+						
+						
+						
+						
+						
+						
+						
+				              <tr>
+								<td><?php echo $i; ?></td>
+								<td><?php echo $gateway_id; ?></td>
+								<td><?php echo $time_stamp; ?></td>
+								<td><?php echo $health['core_clock'] ?></td>
+								<td><?php echo $health['io_voltage']; ?></td>
+								<td><?php echo $health['core_voltage']; ?></td>
+								<td><?php echo $health['cpu_freq']; ?></td>
+								<td><?php echo $health['temperature']; ?></td>
+								<td><?php echo $health['cpu_percent']; ?></td>
+								<td><?php echo $health['physical_voltage']; ?></td>
+								<td><?php echo $health['controller_voltage']; ?></td>
+								<td><?php echo $health['up_time']; ?></td>
+								<td><?php echo  $health['ram_status']; ?></td>
+								<td><?php echo $concentrator['tx-pwr']; ?></td>
+								<td><?php echo $concentrator['pkt_fwd']; ?></td>
+                                                                <td><?php echo $all_ip->lo; ?></td>
+								<td><?php echo $all_ip->eth0; ?></td>
+								<td><?php echo $all_ip->wlan0; ?></td>
+								<td><?php echo $all_ip->public_IP; ?></td>
+								<td><?php echo $all_ip->ppp0; ?></td>
+								<td><?php echo $all_ip->tun0; ?></td>				
+								<td><?php echo $all_ip_stat->lo; ?></td>
+								<td><?php echo $all_ip_stat->eth0; ?></td>
+								<td><?php echo $all_ip_stat->main; ?></td>
+								<td><?php echo $all_ip_stat->ppp0; ?></td>
+								<td><?php echo $all_ip_stat->wlan0; ?></td>
+								<td><?php echo $gateway_ip->lo; ?></td>
+								<td><?php echo $gateway_ip->eth0; ?></td>
+								<td><?php echo $gateway_ip->wlan0; ?></td>
+							</tr>
+							<?php
+									$i++;	}
+							?>
+						</tbody>
+					</table>
+
+</body>	
+</html>			
